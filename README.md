@@ -16,7 +16,19 @@ list(prior="pc.cor1",param=c(0.8,0.318))->theta_hyper
 ### Model formula (fixed effects)
 
 ```r
-as.formula(lpm10~Intercept+dust+aod550.s+log.pbl00.s+log.pbl12.s+sp.s+t2m.s+tp.s+ptp.s+q_dem.s+i_surface.s+d_a1.s-1)->myformula
+# ".s" for standardized
+as.formula(lpm10~Intercept+
+                 dust+ #Dust event 0/1
+                 aod550.s+ #Aerosol optical depth
+                 log.pbl00.s+ #Planet boundary layer at 00:00
+                 log.pbl12.s+ #Planet boundary layer at 12:00
+                 sp.s+ #Surface pressure
+                 t2m.s+ #Temperature at 2 meters
+                 tp.s+ #Total precipitation
+                 ptp.s+ #Total precipitation (previous day)
+                 q_dem.s+ #Digital elevation model (altitude)
+                 i_surface.s+ #Imperviousness
+                 d_a1.s-1)->myformula #Linear distance to the a1 roads
 ```
 
 ### Mesh
@@ -36,7 +48,9 @@ as.formula(lpm10~Intercept+dust+aod550.s+log.pbl00.s+log.pbl12.s+sp.s+t2m.s+tp.s
 
 ```r
     update(myformula,.~.+f(id_centralina,model="iid")+
-                         f(i,model=spde,group = i.group,control.group = list(model="ar1",hyper=list(theta=theta_hyper))))->myformula
+                         f(i,model=spde,
+                             group = i.group,
+                             control.group = list(model="ar1",hyper=list(theta=theta_hyper))))->myformula
 ```
 
 ### Run INLA
