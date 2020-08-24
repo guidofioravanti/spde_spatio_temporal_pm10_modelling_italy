@@ -1,6 +1,6 @@
 # SPDE spatio-temporal PM10 modelling  in Italy
 
-Supporting material for the paper "Spatio-temporal modelling of PM10 daily concentrations in Italy using the SPDE approach"
+Supporting material for the paper "Spatio-temporal modelling of PM10 daily concentrations in Italy using the SPDE approach".
 
 
 ## Model description
@@ -46,7 +46,7 @@ as.formula(lpm10~Intercept+
       inla.spde2.pcmatern(mesh=mesh,alpha=2,constr=FALSE,prior.range = c(150,0.8),prior.sigma = c(0.8,0.2))->spde
 ```
 
-The spatial distribution of the 410 monitoring sites and the mesh for the study domain are illustrated [here](./docs/mesh.md)
+The spatial distribution of the 410 monitoring sites and the mesh for the study domain are illustrated [here](./docs/mesh.md).
 
 ### Model formula (including random effects)
 
