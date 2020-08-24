@@ -8,7 +8,9 @@ Supporting material for the paper "Spatio-temporal modelling of PM10 daily conce
 ### PC-priors
 
 ```r
-list(theta = list(prior="pc.prec", param=c(1,0.1)))->prec_hyper #all'inizio era 0.01
+#Unstructured random effects for the monitoring sites
+list(theta = list(prior="pc.prec", param=c(1,0.01)))->prec_hyper
+
 #AR1 component
 list(prior="pc.cor1",param=c(0.8,0.318))->theta_hyper 
 ```
@@ -40,6 +42,8 @@ as.formula(lpm10~Intercept+
       inla.nonconvex.hull(points = puntiIsola,convex=90)->isola 
       #mesh triangulation for the study domain including Sardegna
       mesh<-inla.mesh.2d(boundary =list(list(terraferma,isola)), max.edge = c(30,150),cutoff=5,offset=c(10),min.angle = 25)
+      
+      inla.spde2.pcmatern(mesh=mesh,alpha=2,constr=FALSE,prior.range = c(150,0.8),prior.sigma = c(0.8,0.2))->spde
 ```
 
 [Mesh for the study domain](./docs/mesh.md)
@@ -47,7 +51,7 @@ as.formula(lpm10~Intercept+
 ### Model formula (including random effects)
 
 ```r
-    update(myformula,.~.+f(id_centralina,model="iid")+
+    update(myformula,.~.+f(id_centralina,model="iid",hyper=prec_hyper)+
                          f(i,model=spde,
                              group = i.group,
                              control.group = list(model="ar1",hyper=list(theta=theta_hyper))))->myformula
