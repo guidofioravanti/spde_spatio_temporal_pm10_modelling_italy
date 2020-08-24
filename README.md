@@ -7,6 +7,8 @@ Supporting material for the paper "Spatio-temporal modelling of PM10 daily conce
 
 ### Mesh
 
+![Mesh for the study domain](./docs/mesh.html)
+
 ## Model output
 
 * [GIF video for January 2015]
