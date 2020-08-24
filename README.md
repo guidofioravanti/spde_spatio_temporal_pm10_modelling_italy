@@ -79,5 +79,7 @@ We used [gganimate](https://gganimate.com/) to create example GIF videos for the
 * [GIF video for January 2015](./docs/video_january2015.md)
 * [GIF video for July 2015](./docs/video_july2015.md)
 
-## Author :writing\ hand:
+## Author :writing_hand:
+
+
 
