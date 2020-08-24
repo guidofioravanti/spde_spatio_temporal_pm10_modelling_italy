@@ -1,4 +1,4 @@
-# SPDE spatio-temporal PM10 modelling  in Italy
+## SPDE spatio-temporal PM10 modelling  in Italy <img align="left" width="219" height="239" src="./docs/logo/logo_readme.png">
 
 Supporting material for the paper "Spatio-temporal modelling of PM10 daily concentrations in Italy using the SPDE approach".
 
