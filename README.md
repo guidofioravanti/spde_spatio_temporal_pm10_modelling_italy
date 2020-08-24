@@ -11,5 +11,5 @@ Supporting material for the paper "Spatio-temporal modelling of PM10 daily conce
 
 ## Model output
 
-* [GIF video for January 2015]
-* [GIF video for July 2015]
+* [GIF video for January 2015](./docs/video_january2015.md)
+* [GIF video for July 2015](./docs/video_july2015.md)
