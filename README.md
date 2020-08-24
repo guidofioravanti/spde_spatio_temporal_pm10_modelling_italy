@@ -82,8 +82,8 @@ We used [gganimate](https://gganimate.com/) to create example GIF videos for the
 ## Author :writing_hand:
 
 * Guido Fioravanti, Italian National Institute for Environmental Protection and Research
-* Sara Martino,Norwegian Univeristy of Science and Technology, Norway
-* Michela Cameletti, Universita degli Studi di Bergamo
+* Sara Martino, Norwegian Univeristy of Science and Technology, Norway
+* Michela Cameletti, Universita degli Studi di Bergamo, Italy
 * Giorgio Cattani, Italian National Institute for Environmental Protection and Research
 
 
