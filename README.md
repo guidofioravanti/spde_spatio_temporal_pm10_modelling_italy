@@ -57,7 +57,7 @@ The spatial distribution of the 410 monitoring sites and the mesh for the study 
                              control.group = list(model="ar1",hyper=list(theta=theta_hyper))))->myformula
 ```
 
-### Run INLA
+### Run INLA :bomb:
 
 ```r
     inla(myformula,
