@@ -5,6 +5,20 @@ Supporting material for the paper "Spatio-temporal modelling of PM10 daily conce
 
 ## Model description
 
+### PC-priors
+
+```r
+list(theta = list(prior="pc.prec", param=c(1,0.1)))->prec_hyper #all'inizio era 0.01
+#AR1 component
+list(prior="pc.cor1",param=c(0.8,0.318))->theta_hyper 
+```
+
+### Model formula (fixed effects)
+
+```r
+as.formula(lpm10~Intercept+dust+aod550.s+log.pbl00.s+log.pbl12.s+sp.s+t2m.s+tp.s+ptp.s+q_dem.s+i_surface.s+d_a1.s-1)->myformula
+```
+
 ### Mesh
 
 ```r
@@ -17,6 +31,26 @@ Supporting material for the paper "Spatio-temporal modelling of PM10 daily conce
 ```
 
 [Mesh for the study domain](./docs/mesh.md)
+
+### Model formula (including random effects)
+
+```r
+    update(myformula,.~.+f(id_centralina,model="iid")+
+                         f(i,model=spde,group = i.group,control.group = list(model="ar1",hyper=list(theta=theta_hyper))))->myformula
+```
+
+### Run INLA
+
+```r
+    inla(myformula,
+         data=inla.stack.data(mystack,spde=spde),
+         family ="gaussian",
+         verbose=TRUE,
+         control.compute = list(openmp.strategy="pardiso.parallel",cpo=TRUE,waic=TRUE,dic=TRUE,config=TRUE),
+         control.fixed = list(prec.intercept = 0.001, prec=1,mean.intercept=0),
+         control.predictor =list(A=inla.stack.A(mystack),compute=TRUE) )->>inla.out
+```
+
 
 ## Model output
 
