@@ -2,7 +2,7 @@
 
 Supporting material for the paper "Spatio-temporal modelling of PM10 daily concentrations in Italy using the SPDE approach".
 
-
+&nbsp;
 
 
 ## Model description
