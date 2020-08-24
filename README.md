@@ -36,7 +36,7 @@ as.formula(lpm10~Intercept+
 ### Mesh
 
 ```r
-      #terraferma: non-convex-hull for the 410 Italian monitoring sites, excluding Sardinia
+      #terraferma: non-convex-hull for the 410 Italian monitoring sites, excluding Sardegna
       inla.nonconvex.hull(points =  puntiTerraferma,convex = 90)->terraferma
       #isola: non-convex-hull for the Sardegna monitoring sites
       inla.nonconvex.hull(points = puntiIsola,convex=90)->isola 
@@ -71,6 +71,8 @@ as.formula(lpm10~Intercept+
 
 
 ## Model output
+
+We used [gganimate](https://gganimate.com/) to create example GIF videos for the daily mean concentrations. 
 
 * [GIF video for January 2015](./docs/video_january2015.md)
 * [GIF video for July 2015](./docs/video_july2015.md)
