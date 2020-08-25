@@ -68,7 +68,7 @@ The spatial distribution of the 410 monitoring sites and the mesh for the study 
          verbose=TRUE,
          control.compute = list(openmp.strategy="pardiso.parallel",cpo=TRUE,waic=TRUE,dic=TRUE,config=TRUE),
          control.fixed = list(prec.intercept = 0.001, prec=1,mean.intercept=0),
-         control.predictor =list(A=inla.stack.A(mystack),compute=TRUE) )->>inla.out
+         control.predictor =list(A=inla.stack.A(mystack),compute=TRUE) )->inla.out
 ```
 
 
