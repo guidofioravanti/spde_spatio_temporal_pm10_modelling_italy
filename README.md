@@ -4,6 +4,9 @@ Supporting material for the paper "_Spatio-temporal modelling of PM10 daily conc
 
 &nbsp;
 
+## PM10 daily dataset
+
+Data are available on request from the authors
 
 ## Model description
 
