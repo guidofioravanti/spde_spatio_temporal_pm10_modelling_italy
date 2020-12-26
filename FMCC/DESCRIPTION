@@ -1,0 +1,18 @@
+Package: FMCC
+Title: Data for "Spatio-temporal modelling of PM10 daily concentrations in Italy using the SPDE approach"
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Guido",
+           family = "Fioravanti",
+           role = c("aut", "cre"),
+           email = "guido.fioravanti@isprambiente.it")
+Description: We provide a tibble with daily PM10 and meteorological observations from Italian stations during 2015. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: yes
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Imports: 
+    tibble
