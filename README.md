@@ -6,7 +6,7 @@ Supporting material for the paper "_Spatio-temporal modelling of PM10 daily conc
 
 ## PM10 daily dataset
 
-Data are available as an R data frame in the *FMCC package* on GitHub. You’ll need to use the devtools (or similar) to install: 
+Daily data are available as an R data frame ("pm10") in the *FMCC package* on GitHub. You’ll need to use the devtools (or similar) to install: 
 
 ```
 # install.packages("devtools")
